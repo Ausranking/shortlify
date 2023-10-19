@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const focusSlice = createSlice({
+export const focusSlice = createSlice({
   name: "focus",
-  initialState: {
+  initialState : {
     isFocused: false,
   },
   reducers: {
@@ -10,10 +10,10 @@ const focusSlice = createSlice({
       state.isFocused = true;
     },
     clearFocus: (state) => {
-state.isFocused = false
-    }
+      state.isFocused = false;
+    },
   },
 });
 
 export const { setFocus, clearFocus } = focusSlice.actions;
-export default focusSlice.reducer
+export default focusSlice.reducer;

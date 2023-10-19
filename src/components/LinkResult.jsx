@@ -44,10 +44,7 @@ const LinkResult = ({ inputValue }) => {
       const response = await fetch("https://api.apilayer.com/short_url/hash", options)
       const res = await response.json()
       setShortenedLink(res.short_url);
-      if (res.message === 'Not a valid url') (
-        // alert('please provide a valid link')
-        setError(true))
-      return
+   
     }
     catch (err) {
       console.error(err)
@@ -63,9 +60,7 @@ const LinkResult = ({ inputValue }) => {
     if (inputValue.length) {
       fetchData();
     }
-    else {
-      setError(true)
-   }
+   
   }, [inputValue.length]);
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import focusReducer from './focus'
 
 export default configureStore({
     reducer: {
-      focused : focusReducer
+      focus : focusReducer
   },
 });
 
