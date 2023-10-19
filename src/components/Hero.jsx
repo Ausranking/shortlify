@@ -1,15 +1,33 @@
 import Button from "./Button";
 import { worker } from "../assets/images";
 import { useSpring, animated } from "@react-spring/web";
+import { useDispatch, useSelector } from "react-redux";
+import { setFocus, clearFocus } from "../redux/focus";
 
 const Hero = () => {
+  const { isFocused } = useSelector(state => state.focused)
+
+  console.log(isFocused)
+  //false in the console shows state is active
+
+  /*I can also do 
+  const isFocused = useSelector(state=> state.focused.isFocused)*/
+  const dispatch = useDispatch()
+
   const springs = useSpring({
-    from: { x: -1000, y: 100 },
-    to: { x: 0, y: 0 },
-  });
+    opacity: isFocused ? 1 : 0,
+    transform: isFocused ? 'scale(1)' : 'scale(0.8)',
+  })
+
+
 
   return (
-    <section className="flex max-lg:flex-col-reverse lg:grid grid-cols-2 auto-cols-fr pb-24 place-items-center lg:h-[75vh] items-center w-11/12 m-auto ">
+    <section
+      onFocus={() => dispatch ((setFocus))}
+      onBlur={() => dispatch(changeFocus(clearFocus))}
+      tabIndex="0"
+
+      className="flex max-lg:flex-col-reverse lg:grid grid-cols-2 auto-cols-fr pb-24 place-items-center lg:h-[75vh] items-center w-11/12 m-auto ">
       <div className="w-full">
         <animated.h1
           style={{ ...springs }}

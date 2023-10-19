@@ -5,7 +5,7 @@ import Stat from "./Stat";
 import BoostSection from "./BoostSection";
 const Main = () => {
   const [inputValue, setInputValue] = useState("");
-
+//tying to lazyload the component providing shortened links
   return (
     <section id="resources" className="h-[70vh] bg-gray w-full relative">
       <div className="absolute w-full top-[-20%] max-lg:top-[-10%]">
