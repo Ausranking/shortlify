@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+        @apply scroll-smooth 
+    }
+
+    body {
+        @apply font-[Poppins,serif]
+    }
+    
+    input {
+        @apply text-error font-extralight font-mono text-sm 
+    }
+
+
+}
+
+@layer components {
+    .form {
+        @apply z-10 w-11/12 place-items-center 
+    }
+
+    .gradient {
+        @apply bg-gradient-to-tr from-cyan to-dark_violet
+    }
+        
+}
