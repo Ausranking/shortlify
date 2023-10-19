@@ -23,14 +23,14 @@ const Hero = () => {
 
   return (
     <section
-      onFocus={() => dispatch ((setFocus))}
+      onFocus={() => dispatch((setFocus))}
       onBlur={() => dispatch(changeFocus(clearFocus))}
       tabIndex="0"
 
       className="flex max-lg:flex-col-reverse lg:grid grid-cols-2 auto-cols-fr pb-24 place-items-center lg:h-[75vh] items-center w-11/12 m-auto ">
       <div className="w-full">
-        <animated.h1
-          style={{ ...springs }}
+        <h1
+          // style={{ ...springs }}
           className=" herotext text-3xl max-sm:text-5xl md:text-8xl lg:text-7xl max-lg:text-center text-darker_violet font-bold"
         >
           More than just shorter links
