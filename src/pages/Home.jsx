@@ -6,7 +6,6 @@ import BoostSection from "../components/BoostSection";
 const Home = () => {
   return (
     <div className="">
-      <BoostSection/>
       <Hero />
       <Main />
     </div>
