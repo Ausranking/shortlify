@@ -14,10 +14,10 @@ const Hero = () => {
   const isFocused = useSelector(state=> state.focused.isFocused)*/
   const dispatch = useDispatch()
 
-  const springs = useSpring({
-    opacity: isFocused ? 1 : 0,
-    transform: isFocused ? 'scale(1)' : 'scale(0.8)',
-  })
+  // const springs = useSpring({
+  //   opacity: isFocused ? 1 : 0,
+  //   transform: isFocused ? 'scale(1)' : 'scale(0.8)',
+  // })
 
 
 
@@ -29,12 +29,12 @@ const Hero = () => {
 
       className="flex max-lg:flex-col-reverse lg:grid grid-cols-2 auto-cols-fr pb-24 place-items-center lg:h-[75vh] items-center w-11/12 m-auto ">
       <div className="w-full">
-        <animated.h1
-          style={{ ...springs }}
+        <h1
+          // style={{ ...springs }}
           className=" herotext text-3xl max-sm:text-5xl md:text-8xl lg:text-7xl max-lg:text-center text-darker_violet font-bold"
         >
           More than just shorter links
-        </animated.h1>
+        </h1>
 
         <p className="max-lg:text-center my-3 text-[min(10vw,1.2rem)] lg:w-3/4 text-grayish_violet max-lg:text-3xl">
           Build your brand's recognition and get detailed insights on how your
