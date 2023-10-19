@@ -2,7 +2,6 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    
     extend: {
       colors: {
         cyan: "hsl(180, 66%, 49%)",
@@ -12,10 +11,13 @@ export default {
         gray: "hsl(0, 0%, 75%)",
         darker_violet: "hsl(260, 8%, 14%)",
       },
+      backgroundImage: {
+        "boost-texture": "url(./src/assets/images/bg-boost.svg)",
+      },
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-   themes :['light']
+    themes: ["light"],
   },
 };
