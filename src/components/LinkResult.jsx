@@ -1,7 +1,7 @@
-// import axios from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-
+import Loading from "./Loading";
 /*...........................................................
  THE PLAN IS TO SEE PREVIOUS URL ACTIVITY OF A USER
 How can it work even while displaying the Link results only when a url is provided?
@@ -37,30 +37,44 @@ const LinkResult = ({ inputValue }) => {
   //...............................................
 
 
+  //axios
 
-  const fetchData = async () => {
+  const fetchAxiosData = async () => {
     try {
-      setLoading(true);
-      const response = await fetch("https://api.apilayer.com/short_url/hash", options)
-      const res = await response.json()
-      setShortenedLink(res.short_url);
-   
+      setLoading(true)
+      const response = await axios.get("https://api.apilayer.com/short_url/hash", options);
     }
-    catch (err) {
-      console.error(err)
+    catch (error) {
+      console.log(error)
     }
 
-    finally {
-      setLoading(false)
-    }
   }
+  // const fetchData = async () => {
+  //   try {
+  //     setLoading(true)
+  //     const response = await fetch("https://api.apilayer.com/short_url/hash", options)
+  //     const res = await response.json()
+  //     setLoading(true);
+  //     setShortenedLink(res.short_url);
+
+  //     // setLoading(false)
+  //   }
+  //   catch (err) {
+  //     console.error(err.message)
+  //     if (err.message === 'Failed to fetch') {
+  //     }
+  //   }
+
+
+  // }
 
 
   useEffect(() => {
     if (inputValue.length) {
-      fetchData();
+      fetchAxiosData();
+
     }
-   
+
   }, [inputValue.length]);
 
   useEffect(() => {
@@ -70,6 +84,12 @@ const LinkResult = ({ inputValue }) => {
     }, 3000);
     return () => clearTimeout(timer);
   }, [copied]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
+  }, [loading])
 
 
   // THE PLAN IS TO SEE PREVIOUS URL ACTIVITY OF A USER
@@ -83,10 +103,11 @@ const LinkResult = ({ inputValue }) => {
     <>
       {inputValue &&
         <div className="w-11/12 mx-auto ">
-          {error ? <p className="text-red text-sm text-center">provide a valid url</p> : <div className="bg-white flex  items-center justify-between px-4 h-12 rounded-md">
+          {error ? <p className="text-red text-sm text-center">provide a valid url</p> : <div className="bg-white flex  items-center justify-between px-4 h-12 border mt-5 rounded-md">
             <p className="text-sm max-md:hidden">{inputValue}</p>
             <div className="flex items-center justify-between space-x-4 max-md:w-full">
-              <p>{shortenedLink}</p>
+              {loading ? <Loading /> : <p>{shortenedLink}</p>
+              }
               <CopyToClipboard
                 text={shortenedLink}
                 onCopy={() => setCopied(true)}
@@ -108,6 +129,7 @@ const LinkResult = ({ inputValue }) => {
 
         </div>
       }
+
     </>
   );
 };

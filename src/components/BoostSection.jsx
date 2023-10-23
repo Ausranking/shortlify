@@ -20,26 +20,22 @@ const BoostSection = () => {
     transform: isFocused ? 'scale(1)' : 'scale(0.8)',
   })
 
-  const handleFocus = () => {
-    console.log('Focused');
-    dispatch(setFocus());
-  }
-  const handleBlur = () => {
-    console.log('blurred');
-    dispatch(clearFocus());
-  }
+
   return (
     <section
-      onMouseOverCapture={handleFocus}
-      onBlur={handleBlur}
-      tabIndex='1'
-      className='grid place-content-center place-items-center bg-boost-texture bg-no-repeat bg-dark_violet mt-10  py-20
+      onMouseEnter={()=> dispatch(setFocus())}
+      onBlur={()=>dispatch(clearFocus())}
+      // tabIndex='1'
+      className='bg-boost-texture bg-no-repeat bg-dark_violet
     '>
-      <animated.h2
+      <div className='grid place-items-center py-10'>
+        <animated.h2
         style={{ ...springs }}
         className='text-white text-center text-lg md:text-lg lg:text-3xl font-bold font-serif pb-2'>Boost your links today</animated.h2>
 
-      <Button text='Get Started'></Button>
+      <Button text='Get Started'></Button> 
+      </div>
+     
     </section>
   )
 }

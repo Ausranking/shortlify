@@ -1,7 +1,7 @@
 
 const Stat = () => {
     return (
-        <section className="mt-20">
+        <section className="mt-20 bg-gray">
             <div className="text-center">
                 <h2>Advanced Statistics</h2>
                 <p>Track how your links are performing accross the web with our advanced statistics dashboard.</p>
