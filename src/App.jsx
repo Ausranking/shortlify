@@ -30,13 +30,15 @@ const router = createBrowserRouter(
 export default function App() {
   return (
     <>
-      {/* <Delay timeout={1000} */}
-        {/* fallback={<div className="grid place-content-center h-screen"><Loading /></div>}>    */}
-        <Suspense fallback={
-          <div className=" grid h-screen place-content-center"> <Loading /></div>}>       
-          <RouterProvider router={router} />
-        </Suspense>
-      {/* </Delay> */}
+      <Suspense
+        fallback={
+          <div className=" grid h-screen place-content-center">
+            <Loading />
+          </div>
+        }
+      >
+        <RouterProvider router={router} />
+      </Suspense>
     </>
   );
 }
