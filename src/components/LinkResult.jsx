@@ -102,7 +102,7 @@ const LinkResult = ({ inputValue }) => {
   return (
     <>
       {inputValue &&
-        <div className="w-11/12 mx-auto ">
+        <div className="w-11/12 mx-auto bg-gray ">
           {error ? <p className="text-red text-sm text-center">provide a valid url</p> : <div className="bg-white flex  items-center justify-between px-4 h-12 border mt-5 rounded-md">
             <p className="text-sm max-md:hidden">{inputValue}</p>
             <div className="flex items-center justify-between space-x-4 max-md:w-full">
