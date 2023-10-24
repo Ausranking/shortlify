@@ -8,7 +8,6 @@ import {
   Route,
   Router,
 } from "react-router-dom";
-import { Delay } from "react-delay-fallback";
 
 //pages
 const Home = React.lazy(() => import("./pages/Home"));
@@ -31,13 +30,13 @@ const router = createBrowserRouter(
 export default function App() {
   return (
     <>
-      <Delay timeout={1000}
-        fallback={<div className="grid place-content-center h-screen"><Loading /></div>}>   
+      {/* <Delay timeout={1000} */}
+        {/* fallback={<div className="grid place-content-center h-screen"><Loading /></div>}>    */}
         <Suspense fallback={
           <div className=" grid h-screen place-content-center"> <Loading /></div>}>       
           <RouterProvider router={router} />
         </Suspense>
-      </Delay>
+      {/* </Delay> */}
     </>
   );
 }

@@ -10,7 +10,7 @@ const Form = ({ setInputValue }) => {
   };
   return (
     <>
-      <div className=" relative w-11/12 m-auto h-36  grid place-items-center bg-dark_violet my-3 rounded-md ">
+      <div className=" relative bottom-16 w-11/12 m-auto h-36  grid place-items-center bg-dark_violet my-3 rounded-md ">
         <div className="absolute top-0 w-full h-full">
           <img
             src={form_bg}

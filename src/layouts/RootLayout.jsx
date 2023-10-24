@@ -4,14 +4,13 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function RootLayout() {
-
-  const date = new Date()
-  const year = date.getFullYear()
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <>
-     <Navbar/>
+      <Navbar />
       <main>
-        <Outlet/>
+        <Outlet />
       </main>
       <footer>
         <Footer/>

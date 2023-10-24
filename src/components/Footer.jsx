@@ -9,9 +9,9 @@ import {
 } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className=" bg-darker_violet text-gray grid place-content-evenly max-sm:place-items-center py-10 gap-6 max-sm:text-center lg:grid-cols-3 place-items-center">
+    <footer className=" bg-darker_violet text-gray grid place-content-evenly max-sm:place-items-center py-10 gap-6 max-sm:text-center md:grid-cols-3 place-items-center">
       <Logo />
-      <div className=" lg:grid grid-flow-col gap-14 ">
+      <div className=" md:grid grid-flow-col gap-14 ">
         {footerLinks.map((footerlink, index) => (
           <div key={index} className="">
             <p className="font-bold my-3 text-md">{footerlink.text}</p>
