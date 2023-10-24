@@ -8,7 +8,6 @@ import {
   Route,
   Router,
 } from "react-router-dom";
-import { Delay } from "react-delay-fallback";
 
 //pages
 const Home = React.lazy(() => import("./pages/Home"));

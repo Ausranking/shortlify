@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import Loading from "./Loading";
