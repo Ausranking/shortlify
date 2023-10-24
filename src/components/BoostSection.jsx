@@ -21,17 +21,12 @@ const BoostSection = () => {
   })
 
   const handleFocus = () => {
-    console.log('Focused');
     dispatch(setFocus());
   }
-  const handleBlur = () => {
-    console.log('blurred');
-    dispatch(clearFocus());
-  }
+  
   return (
     <section
-      onMouseOverCapture={handleFocus}
-      onBlur={handleBlur}
+      onMouseOver={handleFocus}
       tabIndex='1'
       className='grid place-content-center place-items-center bg-boost-texture bg-no-repeat bg-dark_violet mt-10  py-20
     '>

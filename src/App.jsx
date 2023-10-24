@@ -8,6 +8,7 @@ import {
   Route,
   Router,
 } from "react-router-dom";
+import { Delay } from "react-delay-fallback";
 
 //pages
 const Home = React.lazy(() => import("./pages/Home"));
@@ -16,6 +17,7 @@ import ErrorPage from "./pages/ErrorPage";
 
 //layouts
 import RootLayout from "./layouts/RootLayout";
+import Loading from "./components/Loading";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,13 +31,15 @@ const router = createBrowserRouter(
 export default function App() {
   return (
     <>
-      <Suspense
-        fallback={
-          <p className="text-center text-green-600 text-lg">Loading...</p>
-        }
-      >
-        <RouterProvider router={router} />
-      </Suspense>
+      <Delay timeout={1000}
+        fallback={<div className="grid place-content-center h-screen"><Loading /></div>}>   
+        <Suspense fallback={
+          <div className=" grid h-screen place-content-center"> <Loading /></div>
+         
+        }>       
+          <RouterProvider router={router} />
+        </Suspense>
+      </Delay>
     </>
   );
 }
