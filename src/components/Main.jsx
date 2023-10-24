@@ -13,7 +13,7 @@ const Main = () => {
         <Suspense fallback={<p className="text-orange-900 text-xl text-center">loading....</p>}>
           <LinkResult inputValue={inputValue} />
         </Suspense>
-        <Stat />
+      <Stat />
         <BoostSection/>
 
     </section>
