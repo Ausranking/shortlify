@@ -20,13 +20,15 @@ const BoostSection = () => {
     transform: isFocused ? 'scale(1)' : 'scale(0.8)',
   })
 
-
+  const handleFocus = () => {
+    dispatch(setFocus());
+  }
+  
   return (
     <section
-      onMouseEnter={()=> dispatch(setFocus())}
-      onBlur={()=>dispatch(clearFocus())}
-      // tabIndex='1'
-      className='bg-boost-texture bg-no-repeat bg-dark_violet
+      onMouseOver={handleFocus}
+      tabIndex='1'
+      className='grid place-content-center place-items-center bg-boost-texture bg-no-repeat bg-dark_violet mt-10  py-20
     '>
       <div className='grid place-items-center py-10'>
         <animated.h2

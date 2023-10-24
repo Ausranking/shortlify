@@ -13,8 +13,14 @@ export default function RootLayout() {
       <main>
         <Outlet/>
       </main>
+<<<<<<< HEAD
       <Footer/>
        
+=======
+      <footer>
+        <Footer/>
+      </footer>
+>>>>>>> aed2acc63dac231cb149e95f68cf097b75ce23f6
     </>
   );
 }

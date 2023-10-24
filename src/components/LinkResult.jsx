@@ -21,52 +21,38 @@ const LinkResult = ({ inputValue }) => {
   const [shortenedLink, setShortenedLink] = useState([]);
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false)
-
+  const [error, setError] = useState("");
 
   //........apilayer configurations...............
   var myHeaders = new Headers();
   myHeaders.append("apikey", "edSkFCjbzciGxWJh5sBebG1r3KBz7ADW");
   var raw = inputValue;
   var options = {
-    method: 'POST',
-    redirect: 'follow',
+    method: "POST",
+    redirect: "follow",
     headers: myHeaders,
-    body: raw
+    body: raw,
   };
   //...............................................
 
 
-  //axios
 
   const fetchAxiosData = async () => {
     try {
-      setLoading(true)
-      const response = await axios.get("https://api.apilayer.com/short_url/hash", options);
+      setLoading(true);
+      const response = await fetch("https://api.apilayer.com/short_url/hash", options)
+      const res = await response.json()
+      setShortenedLink(res.short_url);
+   
     }
-    catch (error) {
-      console.log(error)
+    catch (err) {
+      console.error(err)
     }
 
+    finally {
+      setLoading(false)
+    }
   }
-  // const fetchData = async () => {
-  //   try {
-  //     setLoading(true)
-  //     const response = await fetch("https://api.apilayer.com/short_url/hash", options)
-  //     const res = await response.json()
-  //     setLoading(true);
-  //     setShortenedLink(res.short_url);
-
-  //     // setLoading(false)
-  //   }
-  //   catch (err) {
-  //     console.error(err.message)
-  //     if (err.message === 'Failed to fetch') {
-  //     }
-  //   }
-
-
-  // }
 
 
   useEffect(() => {
@@ -74,7 +60,7 @@ const LinkResult = ({ inputValue }) => {
       fetchAxiosData();
 
     }
-
+   
   }, [inputValue.length]);
 
   useEffect(() => {
@@ -84,12 +70,6 @@ const LinkResult = ({ inputValue }) => {
     }, 3000);
     return () => clearTimeout(timer);
   }, [copied]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000);
-  }, [loading])
 
 
   // THE PLAN IS TO SEE PREVIOUS URL ACTIVITY OF A USER
@@ -102,12 +82,11 @@ const LinkResult = ({ inputValue }) => {
   return (
     <>
       {inputValue &&
-        <div className="w-11/12 mx-auto bg-gray ">
-          {error ? <p className="text-red text-sm text-center">provide a valid url</p> : <div className="bg-white flex  items-center justify-between px-4 h-12 border mt-5 rounded-md">
+        <div className="w-11/12 mx-auto ">
+          {error ? <p className="text-red text-sm text-center">provide a valid url</p> : <div className="bg-white flex  items-center justify-between px-4 h-12 rounded-md">
             <p className="text-sm max-md:hidden">{inputValue}</p>
             <div className="flex items-center justify-between space-x-4 max-md:w-full">
-              {loading ? <Loading /> : <p>{shortenedLink}</p>
-              }
+              <p>{shortenedLink}</p>
               <CopyToClipboard
                 text={shortenedLink}
                 onCopy={() => setCopied(true)}
@@ -129,7 +108,6 @@ const LinkResult = ({ inputValue }) => {
 
         </div>
       }
-
     </>
   );
 };
