@@ -34,9 +34,7 @@ export default function App() {
       <Delay timeout={1000}
         fallback={<div className="grid place-content-center h-screen"><Loading /></div>}>   
         <Suspense fallback={
-          <div className=" grid h-screen place-content-center"> <Loading /></div>
-         
-        }>       
+          <div className=" grid h-screen place-content-center"> <Loading /></div>}>       
           <RouterProvider router={router} />
         </Suspense>
       </Delay>
