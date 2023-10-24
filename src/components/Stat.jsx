@@ -3,12 +3,12 @@ import { Form } from "react-router-dom";
 import LinkResult from "./LinkResult";
 
 const Stat = () => {
-      const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <section className=" bg-gray">
-
-      <LinkResult inputValue={inputValue} />
+      {/* was rendered here formally */}
+      {/* <LinkResult /> */}
       <div className="text-center">
         <h2>Advanced Statistics</h2>
         <p>

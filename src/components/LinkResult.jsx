@@ -35,32 +35,35 @@ const LinkResult = ({ inputValue }) => {
   };
   //...............................................
 
-
-
-  const fetchAxiosData = async () => {
+  const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await fetch("https://api.apilayer.com/short_url/hash", options)
-      const res = await response.json()
-      setShortenedLink(res.short_url);
-   
-    }
-    catch (err) {
-      console.error(err)
-    }
+      const response = await fetch(
+        "https://api.apilayer.com/short_url/hash",
+        options
+      );
+      const res = await response.json();
+      setLoading(true);
+      if (response.ok) {
+        setShortenedLink(res.short_url);
+      } else {
+        console.error(res.message);
+        setError("....................");
+      }
 
-    finally {
-      setLoading(false)
+      // setLoading(false)
+    } catch (err) {
+      alert(err);
+      if (err.message === "Failed to fetch") {
+        setError("Not a valid url ... please check");
+      }
     }
-  }
-
+  };
 
   useEffect(() => {
     if (inputValue.length) {
-      fetchAxiosData();
-
+      fetchData();
     }
-   
   }, [inputValue.length]);
 
   useEffect(() => {
@@ -71,6 +74,11 @@ const LinkResult = ({ inputValue }) => {
     return () => clearTimeout(timer);
   }, [copied]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, [loading]);
 
   // THE PLAN IS TO SEE PREVIOUS URL ACTIVITY OF A USER
   // useEffect(() => {
@@ -81,33 +89,35 @@ const LinkResult = ({ inputValue }) => {
 
   return (
     <>
-      {inputValue &&
-        <div className="w-11/12 mx-auto ">
-          {error ? <p className="text-red text-sm text-center">provide a valid url</p> : <div className="bg-white flex  items-center justify-between px-4 h-12 rounded-md">
-            <p className="text-sm max-md:hidden">{inputValue}</p>
-            <div className="flex items-center justify-between space-x-4 max-md:w-full">
-              <p>{shortenedLink}</p>
-              <CopyToClipboard
-                text={shortenedLink}
-                onCopy={() => setCopied(true)}
-              >
-                {copied ? (
-                  <button className="bg-dark_violet px-6 font-mono text-success py-2 rounded gradient">
-                    copied!
-                  </button>
-                ) : (
-                  <button className="px-6 py-2 gradient font-mono text-white rounded">
-                    {" "}
-                    copyy
-                  </button>
-                )}
-              </CopyToClipboard>
+      {inputValue && (
+        <div className="w-11/12 mx-auto bg-gray ">
+          {error ? (
+            <p className="text-red text-sm text-center">provide a valid url</p>
+          ) : (
+            <div className="bg-white flex  items-center justify-between px-4 h-12 mt-[-4rem]  rounded-md">
+              <p className="text-sm max-md:hidden">{inputValue}</p>
+              <div className="flex items-center justify-between space-x-4 max-md:w-full">
+                {loading ? <Loading /> : <p>{shortenedLink}</p>}
+                <CopyToClipboard
+                  text={shortenedLink}
+                  onCopy={() => setCopied(true)}
+                >
+                  {copied ? (
+                    <button className="bg-dark_violet px-6 font-mono text-success py-2 rounded gradient">
+                      copied!
+                    </button>
+                  ) : (
+                    <button className="px-6 py-2 gradient font-mono text-white rounded">
+                      {" "}
+                      copyy
+                    </button>
+                  )}
+                </CopyToClipboard>
+              </div>
             </div>
-          </div>
-          }
-
+          )}
         </div>
-      }
+      )}
     </>
   );
 };
