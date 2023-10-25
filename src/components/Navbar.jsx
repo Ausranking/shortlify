@@ -38,15 +38,17 @@ const Navbar = () => {
         </div>
 
         {/* hamburger menu ..... */}
-        <div className="md:hidden" onClick={showMobileMenu}>
-          <div>{nav ? <FaTimes size={25} /> : <FaBars size={25} />}</div>
+        <div className="md:hidden">
+          <div onClick={showMobileMenu}>
+            {nav ? <FaTimes size={25} /> : <FaBars size={25} />}
+          </div>
 
           {/* mobile menu..... */}
-          <div
+          <div onClick={showMobileMenu}
             className={
               nav
                 ? "absolute top-[4rem] flex-col left-0 w-full bg-cyan grid place-items-center text-center rounded-lg p-4 z-10 ease-linear duration-500"
-                : "top-10 left-0 absolute opacity-0 ease-in-out duration-500"
+                : "top-10 left-0 absolute opacity-0 ease-in-out duration-500"             
             }
           >
             <ul className=" w-full ">
