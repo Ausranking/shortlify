@@ -27,11 +27,17 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <div className="flex gap-5 text-emerald-500">
-        <FaFacebook size={25} className="hover:text-cyan" />
-        <FaTwitter size={25} className="hover:text-cyan" />
-        <FaPinterest size={25} className="hover:text-cyan" />
-        <FaTwitter size={25} className="hover:text-cyan" />
+      <div className="flex gap-5 text-cyan">
+        <div>
+            <FaFacebook
+          size={25}
+          className="hover:text-dark_violet hover:scale-105"
+        />
+        </div>
+      
+        <FaTwitter size={25} className="hover:text-dark_violet" />
+        <FaPinterest size={25} className="hover:text-dark_violet" />
+        <FaTwitter size={25} className="hover:text-dark_violet" />
       </div>
     </footer>
   );

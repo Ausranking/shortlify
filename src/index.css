@@ -7,27 +7,37 @@
 
 @layer base {
     html {
-        @apply scroll-smooth 
+        @apply scroll-smooth scroll-ml-20
     }
 
     body {
         @apply font-[Poppins,serif]
     }
-    
-    input {
-        @apply text-error font-extralight font-mono text-sm 
-    }
 
+    input {
+        @apply text-error font-extralight font-mono text-sm
+    }   
 
 }
 
 @layer components {
     .form {
-        @apply z-10 w-11/12 place-items-center 
+        @apply z-10 w-11/12 place-items-center
     }
 
     .gradient {
         @apply bg-gradient-to-tr from-cyan to-dark_violet
     }
-        
+
+    .logo {
+        @apply h-20 w-20 md:h-14 md:w-14 rounded-full grid place-content-center -mt-14 md:-mt-11 max-sm:m-auto max-sm:-translate-y-12
+    }
+
+    .icon {
+        height: 30px !important;
+    }
+    .card {
+        @apply relative grid grid-flow-row rounded p-3 max-w-md m-auto min-h-[200px] bg-white [&>*]:max-sm:text-center
+    }
+
 }
