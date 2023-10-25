@@ -12,7 +12,7 @@ export default {
         darker_violet: "hsl(260, 8%, 14%)",
       },
       backgroundImage: {
-        "boost-texture": "url(./src/assets/images/bg-boost.svg)",
+        "boost-texture": "url(/src/assets/images/bg-boost.svg)",
       },
     },
   },
