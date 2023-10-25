@@ -21,7 +21,7 @@ const Form = ({ setInputValue }) => {
         <div className="form">
           <div className=" grid lg:flex gap-2  ">
             <input
-              className="p-3 w-full rounded-md"
+              className="p-3 w-full rounded-md outline-none"
               required
               type="text"
               value={input}

@@ -68,7 +68,7 @@ const LinkResult = ({ inputValue }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopied(false);
-      setError(false)
+      setError(false);
     }, 3000);
     return () => clearTimeout(timer);
   }, [copied, error]);
@@ -89,9 +89,11 @@ const LinkResult = ({ inputValue }) => {
   return (
     <>
       {inputValue && (
-        <div className="w-11/12 mx-auto bg-gray relative mt-[-5rem] mb-10">
+        <div className="w-11/12 mx-auto bg-gray relative  mb-10">
           {error ? (
-            <p className="text-red text-sm text-center ">provide a valid url</p>
+            <p className="text-red text-sm text-center -mt-[4rem]">
+              provide a valid url
+            </p>
           ) : (
             <div className="bg-white flex  items-center justify-between px-4 h-12 mt-[-4rem]  rounded-md">
               <p className="text-sm max-md:hidden">{inputValue}</p>
