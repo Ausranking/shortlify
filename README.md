@@ -7,7 +7,7 @@ Improve brand awareness and content discoverability through customizable links. 
 ![](<./public/screenshots/shortlify-eta.vercel.app_(Nest%20Hub%20Max)%20(1).png>)
 ![](<./public/screenshots/shortlify-eta.vercel.app_(Nest%20Hub%20Max).png>)
 
-Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+Live Site URL: [shortlify.com](https://shortlify-eta.vercel.app/))
 
 ### Built with
 - REST API
