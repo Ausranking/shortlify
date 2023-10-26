@@ -10,7 +10,7 @@ const Form = ({ setInputValue }) => {
   };
   return (
     <>
-      <div className=" relative bottom-16 w-11/12 m-auto h-36  grid place-items-center bg-dark_violet my-3 rounded-md ">
+      <div className="form-class">
         <div className="absolute top-0 w-full h-full">
           <img
             src={form_bg}
@@ -21,7 +21,7 @@ const Form = ({ setInputValue }) => {
         <div className="form">
           <div className=" grid lg:flex gap-2  ">
             <input
-              className="p-3 w-full rounded-md outline-none"
+              className="p-3 w-full rounded-md outline-none focus:border ring-rose"
               required
               type="text"
               value={input}

@@ -91,7 +91,7 @@ const LinkResult = ({ inputValue }) => {
       {inputValue && (
         <div className="w-11/12 mx-auto bg-gray relative  mb-10">
           {error ? (
-            <p className="text-red text-sm text-center -mt-[4rem]">
+            <p className="text-rose text-sm text-center -mt-[4rem]">
               provide a valid url
             </p>
           ) : (
