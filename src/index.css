@@ -39,9 +39,7 @@
     .card {
         @apply relative grid grid-flow-row rounded p-3 max-w-md m-auto min-h-[200px] bg-white [&>*]:max-sm:text-center
     }
-    .hero {
-        @apply relative h-[85vh] w-full grid max-lg:place-content-center lg:items-center m-auto bg-hero bg-no-repeat bg-cover max-sm:bg-center
-    }
+  
     .form-class {
         @apply relative bottom-16 w-11/12 m-auto h-36 grid place-items-center bg-rose my-3 rounded-md
     }
