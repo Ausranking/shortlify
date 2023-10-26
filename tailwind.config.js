@@ -19,7 +19,7 @@ export default {
       },
       backgroundImage: {
         "boost-texture": "url(./src/assets/images/bg-boost.svg)",
-        hero: "url(./src/assets/images/hero-sh.png)",
+        "hero": "url(./src/assets/images/hero-sh.png)",
       },
     },
   },
