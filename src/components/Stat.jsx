@@ -2,7 +2,7 @@ import StatCard from "./StatCard";
 import { icon1, icon2, icon3 } from "/src/assets/images";
 const Stat = () => {
   return (
-    <section className="w-11/12 m-auto min-h-fit pt-1 pb-10 lg:pb-32">
+    <section className="w-11/12 m-auto min-h-fit pb-10 lg:pb-32">
       <div className="text-center">
         <h2 className="text-2xl lg:text-3xl text-darker_violet font-bold py-1">
           Advanced Statistics
