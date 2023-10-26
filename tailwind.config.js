@@ -18,8 +18,8 @@ export default {
         rose: "rgb(204, 39, 93)",
       },
       backgroundImage: {
-        "boost-texture": "url(./src/assets/images/bg-boost.svg)",
-        "hero": "url(./src/assets/images/hero-sh.png)",
+        "boost-texture": "url(/src/assets/images/bg-boost.svg)",
+        "hero": "url(/src/assets/images/hero-sh.png)",
       },
     },
   },
