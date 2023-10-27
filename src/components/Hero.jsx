@@ -1,5 +1,4 @@
 import Button from "./Button";
-import { hero, worker } from "../assets/images";
 import { useSpring, animated, to } from "@react-spring/web";
 
 const Hero = () => {
@@ -11,7 +10,7 @@ const Hero = () => {
   })
   return (
     <section className="relative h-[85vh] w-full grid max-lg:place-content-center lg:items-center m-auto bg-hero bg-no-repeat bg-cover max-sm:bg-center ">
-      <div className="absolute h-full w-full bg-black/60"></div>
+      <div className="absolute h-full w-full bg-black/20"></div>
       <div className="md:ml-16 max-sm:text-center">
         <animated.h1
           style={{ ...springs }}
