@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer className=" bg-darker_violet text-gray grid place-content-evenly max-sm:place-items-center py-10 gap-6 max-sm:text-center md:grid-cols-3 place-items-center">
+    <footer className=" bg-darker-violet text-gray grid place-content-evenly max-sm:place-items-center py-10 gap-6 max-sm:text-center md:grid-cols-3 place-items-center">
       <Logo />
       <div className=" md:grid grid-flow-col gap-14 ">
         {footerLinks.map((footerlink, index) => (
@@ -31,13 +31,13 @@ const Footer = () => {
         <div>
             <FaFacebook
           size={25}
-          className="hover:text-dark_violet hover:scale-105"
+          className="hover:text-dark-violet hover:scale-105"
         />
         </div>
       
-        <FaTwitter size={25} className="hover:text-dark_violet" />
-        <FaPinterest size={25} className="hover:text-dark_violet" />
-        <FaTwitter size={25} className="hover:text-dark_violet" />
+        <FaTwitter size={25} className="hover:text-dark-violet" />
+        <FaPinterest size={25} className="hover:text-dark-violet" />
+        <FaTwitter size={25} className="hover:text-dark-violet" />
       </div>
     </footer>
   );

@@ -14,12 +14,12 @@ const Hero = () => {
       <div className="md:ml-16 max-sm:text-center">
         <animated.h1
           style={{ ...springs }}
-          className="md:text-6xl lg:text-7xl text-4xl mt-10 text-sea_salt font-bold"
+          className="md:text-6xl lg:text-7xl text-4xl mt-10 text-sea-salt font-bold"
         >
           More than just <br /> <span className="text-rose">shorter</span> links
         </animated.h1>
 
-        <p className=" my-3 p-2 lg:w-3/4 text-sea_salt text-xl md:text-4xl lg:text-xl">
+        <p className=" my-3 p-2 lg:w-3/4 text-sea-salt text-xl md:text-4xl lg:text-xl">
           Build your brand's recognition and get detailed insights <br /> on how your
           links are performing
         </p>

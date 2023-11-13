@@ -19,7 +19,7 @@ const Navbar = () => {
               <NavLink key={index} to={navlink.ref}>
                 <li
                   key={navlink.text}
-                  className="px-3 text-grayish_violet font-semibold hover:text-darker_violet/95 "
+                  className="px-3 text-grayish-violet font-semibold hover:text-darker-violet/95 "
                 >
                   {navlink.text}
                 </li>
@@ -62,7 +62,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="divider w-full"></div>
-            <div className=" ">
+            <div>
               <button className="text-md my-3 ">Login</button>
               <div>
                 <button className="w-[200px] rounded p-2">Sign up</button>

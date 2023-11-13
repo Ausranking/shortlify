@@ -27,7 +27,7 @@ const BoostSection = () => {
     <section
       onMouseOver={handleFocus}
       tabIndex="1"
-      className=" place-items-center bg-boost-texture bg-no-repeat bg-dark_violet mt-12 py-20
+      className=" place-items-center bg-boost-texture bg-no-repeat bg-dark-violet mt-12 py-20
     "
     >
       <div className="grid place-items-center py-10">

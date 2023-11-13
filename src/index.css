@@ -26,7 +26,7 @@
     }
 
     .gradient {
-        @apply bg-gradient-to-tr from-cyan to-dark_violet
+        @apply bg-gradient-to-tr from-cyan to-dark-violet
     }
 
     .logo {

@@ -9,12 +9,12 @@ export default {
     extend: {
       colors: {
         cyan: "hsl(180, 66%, 49%)",
-        dark_violet: "hsl(257, 27%, 26%)",
-        grayish_violet: "hsl(257, 7%, 63%)",
+        "dark-violet": "hsl(257, 27%, 26%)",
+        "grayish-violet": "hsl(257, 7%, 63%)",
         red: "hsl(0, 87%, 67%)",
         gray: "hsl(0, 0%, 75%)",
-        darker_violet: "hsl(260, 8%, 14%)",
-        sea_salt: "rgb(247, 247, 247)",
+        "darker-violet": "hsl(260, 8%, 14%)",
+        "sea-salt": "rgb(247, 247, 247)",
         rose: "rgb(204, 39, 93)",
       },
       backgroundImage: {
