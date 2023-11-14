@@ -43,5 +43,6 @@
         @apply relative bottom-16 w-11/12 m-auto h-36 grid place-items-center bg-rose my-3 rounded-md
     }
 form input {
-    @apply  ring-1 w-full ring-dark-violet my-1 p-2}
+    @apply  ring-1 w-full ring-dark-violet my-1 px-2 py-3 rounded
+}
 }

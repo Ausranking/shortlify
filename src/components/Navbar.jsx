@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import { navlinks } from "../constants";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import LoginButton from "./LoginButton";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -29,7 +30,7 @@ const Navbar = () => {
         </div>
         {/* Actions routing to login and sign up pages */}
         <div className=" flex items-center gap-3 max-md:hidden ">
-          <button className="text-md ">Login</button>
+          <LoginButton/>
           <div>
             <button className="text-md  bg-cyan rounded-md px-3 h-10 w-full">
               Sign up

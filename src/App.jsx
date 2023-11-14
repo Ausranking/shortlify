@@ -12,12 +12,12 @@ import {
 //pages
 const Home = React.lazy(() => import("./pages/Home"));
 const Features = React.lazy(() => import("./pages/Features"));
-const Login = React.lazy(() => import("./pages/Login"));
 import ErrorPage from "./pages/ErrorPage";
 
 //layouts
 import RootLayout from "./layouts/RootLayout";
 import Loading from "./components/Loading";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
