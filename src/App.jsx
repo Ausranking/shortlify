@@ -12,6 +12,7 @@ import {
 //pages
 const Home = React.lazy(() => import("./pages/Home"));
 const Features = React.lazy(() => import("./pages/Features"));
+const Login = React.lazy(() => import("./pages/Login"));
 import ErrorPage from "./pages/ErrorPage";
 
 //layouts
@@ -20,7 +21,7 @@ import Loading from "./components/Loading";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/" element={<Login />}>
       <Route path="*" element={<ErrorPage />} />
       <Route index element={<Home />} />
       <Route path="features" element={<Features />} />
