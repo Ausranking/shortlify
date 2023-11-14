@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
-const LoginButton = () => {
+const Logout = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0;
   return !isAuthenticated && <button className="text-md ">Login</button>;
 };
 
-export default LoginButton;
+export default Logout;
