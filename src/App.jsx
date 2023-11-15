@@ -3,10 +3,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  NavLink,
-  Routes,
   Route,
-  Router,
 } from "react-router-dom";
 
 //pages
@@ -21,7 +18,7 @@ import Login from "./pages/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Login />}>
+    <Route path="/" element={<RootLayout />}>
       <Route path="*" element={<ErrorPage />} />
       <Route index element={<Home />} />
       <Route path="features" element={<Features />} />

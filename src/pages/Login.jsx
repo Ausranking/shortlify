@@ -1,15 +1,16 @@
-//Create a login page for shortlify in another branch, pull request to features before main
-
 import { useState } from "react";
+// import {useForm} from 'react-hook-form'
+// import {DevTool} from '@hookform/devtools'
+// import {yupResolver} from '@hookform/resolvers/yup'
+// import * as yup from 'yup'
 import Logo from "../components/Logo";
 
-const Login = ({ onLogin }) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    onLogin({ username, password });
   }
   return (
     <section className=" flex max-lg:gap-20 md:gap-10 max-sm:gap-1 flex-col py-10 md:py-5 max-lg:items-center px-4 md:w-11/12 m-auto">

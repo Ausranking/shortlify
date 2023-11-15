@@ -64,7 +64,7 @@ const Navbar = () => {
             </ul>
             <div className="divider w-full"></div>
             <div>
-              <button className="text-md my-3 ">Login</button>
+              <LoginButton/>
               <div>
                 <button className="w-[200px] rounded p-2">Sign up</button>
               </div>

@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+       
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/pages/Login.jsx"],
+    "exclude": ["node_modules"]
+  }
+  
